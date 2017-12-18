@@ -36,6 +36,7 @@ public class PlayerDeathListener implements Listener
 			{
 				if(p.equals(victim))
 				{
+					plugin.log("victim found in global variable");
 					for(Match m : Match.getActiveMatches())
 					{
 						for(Player pl : m.getPlayers())

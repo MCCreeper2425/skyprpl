@@ -49,12 +49,17 @@ public class TestCommand implements CommandExecutor
 		
 		if(player.getName().equalsIgnoreCase("NeoStarBG"))
 		{
+			plugin.log("Creating match");
 			Match m = new Match(plugin);
+			plugin.log("Player 1 is "+player.getName());
 			m.setPlayer1(player);
+			plugin.log("Player 2 is Skyzao");
 			m.setPlayer2(Bukkit.getPlayer("Skyzao"));
+			plugin.log("Kit is "+args[0]);
 			m.setKit(args[0]);
-			m.setArena(Queue.getFreeArena());
-			m.start(m.getKit());
+			//m.setArena(Queue.getFreeArena());
+			plugin.log("Queing match");
+			Queue.queueMatch(m);
 		}
 		
 		//Debug begins here

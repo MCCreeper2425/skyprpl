@@ -57,19 +57,25 @@ public class Queue
 	{
 		if(queue.contains(m)) {return;}
 		
+		plugin.log("Queue does not contain Match");
+		
 		queue.add(m);
+		plugin.log("Added to the queue");
 		check();
 	}
 	
 	public static void check()
 	{
+		plugin.log("Checking for free arena");
 		Arena a = getFreeArena();
 		if(a==null){return;}
 		
+		plugin.log("Free arena found : "+a.getName());
 		for (Match m : queue)
 		{
 			if(m.getPlayer1() != null && m.getPlayer2() != null)
 			{
+				m.setArena(a);
 				m.start(m.getKit());
 				return;
 			}

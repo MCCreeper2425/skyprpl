@@ -99,14 +99,17 @@ public class SkyPractice extends JavaPlugin
 	
 	public void initArenas()
 	{
+		System.out.println("Initialising arenas");
 		Arena.init(this);
 		ConfigurationSection csa = config.getConfigurationSection("Arenas");
 		
 		for(String x :csa.getKeys(false))
 		{
 			Location p1, p2;
+			System.out.println("Arena " + x);
 			p1 = Util.getLocation(this, "Arenas."+x+".p1");
 			p2 = Util.getLocation(this, "Arenas."+x+".p2");
+			System.out.println("XYZ: " + p1.getBlockX() + ", " + p1.getBlockY() + ", " + p1.getBlockZ());
 			new Arena(x, p1, p2);
 		}
 		

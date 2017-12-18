@@ -56,6 +56,9 @@ public class Match
 	
 	public void start(String gt)
 	{
+		plugin.log("Starting game");
+		plugin.log("Arena: "+arena.getName());
+		
 		Queue.removeFromQueue(this);
 		
 		Location p1l = arena.getP1();
@@ -63,6 +66,8 @@ public class Match
 		
 		Location p2l = arena.getP2();
 		p2.teleport(p2l);
+		
+		arena.setFree(false);
 		
 		p1.setGameMode(GameMode.SURVIVAL);
 		p2.setGameMode(GameMode.SURVIVAL);
@@ -73,6 +78,8 @@ public class Match
 	
 	public void finish(Player victim)
 	{
+		arena.setFree(true);
+		
 		Player killer = null;
 		if(p1.equals(victim)) killer = p2;
 		else killer = p1; 

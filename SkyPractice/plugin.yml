@@ -1,0 +1,15 @@
+name: SkyPractice
+version: Indev
+author: NeoStarBG
+main: me.neostarbg.skypractice.SkyPractice
+depend: [BossShop]
+commands:
+  test:
+    description: "Debug command"
+  pradmin:
+    description: "Main Admin Command"
+  showinventory:
+    description: "Internal command" 
+  duel:
+    description: "Duel a specific player"
+    usage: /duel <player> OR /duel accept <player> OR /duel deny <player>

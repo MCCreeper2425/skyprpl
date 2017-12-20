@@ -26,6 +26,7 @@ public class AdminCommand implements CommandExecutor
 		{
 			Config config = plugin.getC();
 			config.reload();
+			player.sendMessage("§aReloaded");
 		}
 		return true;
 	}

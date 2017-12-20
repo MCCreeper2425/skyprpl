@@ -65,6 +65,11 @@ public class Config
         }
 	}
 	
+	public void reload()
+	{
+		createFiles();
+	}
+	
 	//Getters and setters
 
 	public File getConfigfile() {

@@ -4,11 +4,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.neostarbg.skypractice.commands.AdminCommand;
 import me.neostarbg.skypractice.commands.TestCommand;
 
 public class SkyPractice extends JavaPlugin
 {
-	private boolean debug;
+	private boolean debug = true;
 	private Config config;
 	
 	public void onEnable()
@@ -24,6 +25,7 @@ public class SkyPractice extends JavaPlugin
 	public void initCommands()
 	{
 		getCommand("test").setExecutor(new TestCommand(this));
+		getCommand("practice").setExecutor(new AdminCommand(this));
 	}
 	
 	public boolean isInDebug() {return debug;}
@@ -31,6 +33,8 @@ public class SkyPractice extends JavaPlugin
 	
 	public void debug(String a)
 	{
+		if(!debug) return;
+		
 		for(Player p : Bukkit.getOnlinePlayers())
 		{
 			if(p.isOp())

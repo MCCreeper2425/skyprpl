@@ -1,0 +1,8 @@
+name: SkyPractice
+main: me.neostarbg.skypractice.SkyPractice
+version: 0.1
+commands:
+  test:
+    description: Internal command
+  practice:
+    description: Main admin command
